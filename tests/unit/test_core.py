@@ -27,3 +27,9 @@ def test_is_palindrome():
     assert not c.is_palindrome("Hello")
     assert not c.is_palindrome("Python")
 
+def test_reverse_words():
+    from textutils.core import reverse_words
+    assert reverse_words("hello world") == "world hello"
+    assert reverse_words("a b c") == "c b a"
+    assert reverse_words("single") == "single"
+    assert reverse_words("") == ""
