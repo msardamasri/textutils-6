@@ -75,3 +75,9 @@ def test_truncate():
     assert c.truncate(text, 10) == "This is..."
     assert c.truncate(text, 5) == "Th..."
     assert c.truncate(text, 3) == "Thi"
+
+def test_collapse_duplicates():
+    text = "hello!!! world??? yes..."
+    assert c.collapse_duplicates(text, '!') == "hello! world??? yes..."
+    assert c.collapse_duplicates(text, '.') == "hello!!! world??? yes."
+    assert c.collapse_duplicates("aaabbbccc", 'a') == "abbbccc"

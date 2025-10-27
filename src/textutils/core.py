@@ -73,3 +73,7 @@ def truncate(text, n):
     if len(text) <= n:
         return text
     return text[:n-3] + '...' if n > 3 else text[:n]
+
+def collapse_duplicates(text, char):
+    import re
+    return re.sub(f'{re.escape(char)}+', char, text)
