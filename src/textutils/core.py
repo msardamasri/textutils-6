@@ -38,3 +38,6 @@ def capitalize_sentences(text):
     capitalized_sentences = [s.capitalize() for s in sentences]
     return ''.join(capitalized_sentences)
 
+def word_lengths(text):
+    words = text.split()
+    return {word: len(word) for word in words}
