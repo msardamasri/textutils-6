@@ -74,6 +74,6 @@ pytest --cov=src/textutils --cov-report=term-missing
 
 ## Project Description
 
-This package was developed as a group assignment for Python for Data Science. We initially handled different features separately, resolving merge conflicts individually with each commit to the master branch. Afterward, we transitioned to working collaboratively on the `average_word_length` feature, contributing to both its testing and core functionality.
+This package was developed as a group assignment for Python for Data Science. We initially handled different features separately, resolving merge conflicts individually with each commit to the master branch (demonstrating individual knowledge). Afterward, we transitioned to working collaboratively on the `average_word_length` feature, contributing to both its testing and core functionality. Finally we implemented the remaining features and the docs update.
 
 ---
