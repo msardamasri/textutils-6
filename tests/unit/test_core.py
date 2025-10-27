@@ -100,3 +100,9 @@ def test_replace_numbers():
     assert c.replace_numbers("Room 101") == "Room one zero one"
     assert c.replace_numbers("123") == "one two three"
     assert c.replace_numbers("") == ""
+
+def test_sentence_count():
+    assert c.sentence_count("Hello. How are you? I'm fine!") == 3
+    assert c.sentence_count("Just one sentence") == 1
+    assert c.sentence_count("") == 0
+    assert c.sentence_count("First. Second.") == 2
