@@ -36,3 +36,6 @@ def test_reverse_words():
 
 def test_average_word_length():
     text = "Hello world"
+    words = text.split()
+    avg_length = sum(len(word) for word in words) / len(words)
+    assert avg_length == 5.0
