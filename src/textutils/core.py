@@ -54,10 +54,10 @@ def strip_accents(text):
 def slugify(text):
     import re
     import unicodedata
-
-    text = unicodedata.normalize('NFKD', text)
-    text = ''.join(c for c in text if not unicodedata.combining(c))
+    text = unicodedata.normalize('NFD', text)
+    text = ''.join(c for c in text if unicodedata.category(c) != 'Mn')
     text = text.lower()
+    text = re.sub(r'&', 'and', text)
     text = re.sub(r'[^a-z0-9]+', '-', text)
     return text.strip('-')
 
@@ -67,7 +67,9 @@ def count_vowels(text):
 
 def camel_to_snake(text):
     import re
-    return re.sub(r'(?<!^)(?=[A-Z])', '_', text).lower()
+    text = re.sub(r'(?<=[a-z])(?=[A-Z])', '_', text)
+    text = re.sub(r'(?<=[A-Z])(?=[A-Z][a-z])', '_', text)
+    return text.lower()
 
 def truncate(text, n):
     if len(text) <= n:
@@ -93,7 +95,17 @@ def compare_texts(text1, text2):
 def replace_numbers(text):
     words = {'0':'zero','1':'one','2':'two','3':'three','4':'four',
              '5':'five','6':'six','7':'seven','8':'eight','9':'nine'}
-    return ''.join(words[c] if c in words else c for c in text)
+    result = []
+    for char in text:
+        if char in words:
+            if result and result[-1] != ' ':
+                result.append(' ')
+            result.append(words[char])
+            if char != text[-1] and text[text.index(char) + 1] != ' ':
+                result.append(' ')
+        else:
+            result.append(char)
+    return ''.join(result).replace('  ', ' ').strip()
 
 def sentence_count(text):
     import re
