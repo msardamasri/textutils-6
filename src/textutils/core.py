@@ -64,3 +64,7 @@ def slugify(text):
 def count_vowels(text):
     vowels = 'aeiou'
     return sum(1 for char in text.lower() if char in vowels)
+
+def camel_to_snake(text):
+    import re
+    return re.sub(r'(?<!^)(?=[A-Z])', '_', text).lower()

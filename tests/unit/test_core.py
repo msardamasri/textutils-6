@@ -63,3 +63,9 @@ def test_count_vowels():
     assert c.count_vowels("Python Programming") == 4
     assert c.count_vowels("BCDFG") == 0
     assert c.count_vowels("AEIOUaeiou") == 10
+
+def test_camel_to_snake():
+    assert c.camel_to_snake("CamelCase") == "camel_case"
+    assert c.camel_to_snake("HTTPRequest") == "http_request"
+    assert c.camel_to_snake("SimpleText") == "simple_text"
+    assert c.camel_to_snake("helloWorld") == "hello_world"
