@@ -94,3 +94,9 @@ def test_compare_texts():
     assert c.compare_texts(text1, text2) == 0.5
     assert c.compare_texts("same same", "same same") == 1.0
     assert c.compare_texts("hello", "world") == 0.0
+
+def test_replace_numbers():
+    assert c.replace_numbers("I have 2 apples") == "I have two apples"
+    assert c.replace_numbers("Room 101") == "Room one zero one"
+    assert c.replace_numbers("123") == "one two three"
+    assert c.replace_numbers("") == ""
