@@ -9,3 +9,8 @@ def top_n(word_counts, n):
 def normalize_whitespace(text):
     import re
     return re.sub(r'\s+', ' ', text).strip()
+
+def unique_words(text):
+    words = text.lower().split()
+    words = [word.strip(".,!?;:'\"()[]{}") for word in words]
+    return sorted(set(words))
