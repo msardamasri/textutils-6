@@ -31,3 +31,10 @@ def average_word_length(text):
     if not words:
         return 0
     return sum(len(word) for word in words) / len(words)
+
+def capitalize_sentences(text):
+    import re
+    sentences = re.split('([.!?] *)', text)
+    capitalized_sentences = [s.capitalize() for s in sentences]
+    return ''.join(capitalized_sentences)
+

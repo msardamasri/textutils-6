@@ -39,3 +39,8 @@ def test_average_word_length():
     words = text.split()
     avg_length = sum(len(word) for word in words) / len(words)
     assert avg_length == 5.0
+
+def test_capitalize_sentences():
+    text = "hello world. this is a test! is it working?"
+    expected = "Hello world. This is a test! Is it working?"
+    assert c.capitalize_sentences(text) == expected
