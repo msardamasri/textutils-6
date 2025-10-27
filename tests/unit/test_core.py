@@ -52,3 +52,8 @@ def test_word_lengths():
 def test_strip_accents():
     text = "café naïve façade"
     assert c.strip_accents(text) == "cafe naive facade"
+
+def test_slugify():
+    assert c.slugify("Hello World!") == "hello-world"
+    assert c.slugify("Café & Château") == "cafe-and-chateau"
+    assert c.slugify("  spaces  here  ") == "spaces-here"

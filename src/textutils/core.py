@@ -50,3 +50,13 @@ def strip_accents(text):
         char for char in normalized
         if unicodedata.category(char) != 'Mn'
     )
+
+def slugify(text):
+    import re
+    import unicodedata
+
+    text = unicodedata.normalize('NFKD', text)
+    text = ''.join(c for c in text if not unicodedata.combining(c))
+    text = text.lower()
+    text = re.sub(r'[^a-z0-9]+', '-', text)
+    return text.strip('-')
