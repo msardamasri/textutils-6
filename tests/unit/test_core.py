@@ -19,3 +19,11 @@ def test_unique_words_handles_punctuation_and_case():
 def test_remove_punctuation_removes_all_punctuation():
     text = "Hello, world! This is a test."
     assert c.remove_punctuation(text) == "Hello world This is a test"
+
+def test_is_palindrome():
+    assert c.is_palindrome("Racecar")
+    assert c.is_palindrome("nurses run")
+    assert c.is_palindrome("Was it a car or a cat I saw")
+    assert not c.is_palindrome("Hello")
+    assert not c.is_palindrome("Python")
+

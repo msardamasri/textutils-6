@@ -18,3 +18,7 @@ def unique_words(text):
 def remove_punctuation(text):
     import string
     return text.translate(str.maketrans('', '', string.punctuation))
+
+def is_palindrome(text):
+    cleaned = text.lower().replace(" ", "")
+    return cleaned == cleaned[::-1]
