@@ -33,3 +33,6 @@ def test_reverse_words():
     assert reverse_words("a b c") == "c b a"
     assert reverse_words("single") == "single"
     assert reverse_words("") == ""
+
+def test_average_word_length():
+    text = "Hello world"
