@@ -11,3 +11,11 @@ def test_top_n_order_and_ties():
 def test_normalize_whitespace_removes_extra_spaces():
     text = "  a   b \n  c  "
     assert c.normalize_whitespace(text) == "a b c"
+
+
+def test_is_palindrome():
+    assert is_palindrome("Racecar") is True
+    assert is_palindrome("nurses run") is True
+    assert is_palindrome("Was it a car or a cat I saw") is True
+    assert is_palindrome("Hello") is False
+    assert is_palindrome("Python") is False

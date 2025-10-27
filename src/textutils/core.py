@@ -9,3 +9,7 @@ def top_n(word_counts, n):
 def normalize_whitespace(text):
     import re
     return re.sub(r'\s+', ' ', text).strip()
+
+def is_palindrome(text):
+    cleaned = text.lower().replace(" ", "")
+    return cleaned == cleaned[::-1]
