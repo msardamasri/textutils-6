@@ -69,3 +69,9 @@ def test_camel_to_snake():
     assert c.camel_to_snake("HTTPRequest") == "http_request"
     assert c.camel_to_snake("SimpleText") == "simple_text"
     assert c.camel_to_snake("helloWorld") == "hello_world"
+
+def test_truncate():
+    text = "This is a long text that needs truncation"
+    assert c.truncate(text, 10) == "This is..."
+    assert c.truncate(text, 5) == "Th..."
+    assert c.truncate(text, 3) == "Thi"

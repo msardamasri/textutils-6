@@ -68,3 +68,8 @@ def count_vowels(text):
 def camel_to_snake(text):
     import re
     return re.sub(r'(?<!^)(?=[A-Z])', '_', text).lower()
+
+def truncate(text, n):
+    if len(text) <= n:
+        return text
+    return text[:n-3] + '...' if n > 3 else text[:n]
