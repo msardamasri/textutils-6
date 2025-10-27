@@ -41,3 +41,12 @@ def capitalize_sentences(text):
 def word_lengths(text):
     words = text.split()
     return {word: len(word) for word in words}
+
+def strip_accents(text):
+    import unicodedata
+    normalized = unicodedata.normalize('NFD', text)
+    
+    return ''.join(
+        char for char in normalized
+        if unicodedata.category(char) != 'Mn'
+    )

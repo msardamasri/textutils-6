@@ -46,6 +46,9 @@ def test_capitalize_sentences():
     assert c.capitalize_sentences(text) == expected
 
 def test_word_lengths():
-    # Basic test
     text = "hello world python"
     assert c.word_lengths(text) == {"hello": 5, "world": 5, "python": 6}
+
+def test_strip_accents():
+    text = "café naïve façade"
+    assert c.strip_accents(text) == "cafe naive facade"
