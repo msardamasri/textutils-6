@@ -14,7 +14,7 @@ def unique_words(text):
     words = text.lower().split()
     words = [word.strip(".,!?;:'\"()[]{}") for word in words]
     return sorted(set(words))
-    
+
 def remove_punctuation(text):
     import string
     return text.translate(str.maketrans('', '', string.punctuation))
