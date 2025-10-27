@@ -81,3 +81,9 @@ def test_collapse_duplicates():
     assert c.collapse_duplicates(text, '!') == "hello! world??? yes..."
     assert c.collapse_duplicates(text, '.') == "hello!!! world??? yes."
     assert c.collapse_duplicates("aaabbbccc", 'a') == "abbbccc"
+
+def test_is_anagram():
+    assert c.is_anagram("listen", "silent") == True
+    assert c.is_anagram("Hello", "World") == False
+    assert c.is_anagram("Dormitory", "Dirty room") == True
+    assert c.is_anagram("abc", "abcd") == False

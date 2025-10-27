@@ -77,3 +77,8 @@ def truncate(text, n):
 def collapse_duplicates(text, char):
     import re
     return re.sub(f'{re.escape(char)}+', char, text)
+
+def is_anagram(a, b):
+    a_clean = ''.join(c for c in a.lower() if c.isalpha())
+    b_clean = ''.join(c for c in b.lower() if c.isalpha())
+    return sorted(a_clean) == sorted(b_clean)
