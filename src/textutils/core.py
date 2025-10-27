@@ -60,3 +60,7 @@ def slugify(text):
     text = text.lower()
     text = re.sub(r'[^a-z0-9]+', '-', text)
     return text.strip('-')
+
+def count_vowels(text):
+    vowels = 'aeiou'
+    return sum(1 for char in text.lower() if char in vowels)

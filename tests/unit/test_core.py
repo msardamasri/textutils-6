@@ -57,3 +57,9 @@ def test_slugify():
     assert c.slugify("Hello World!") == "hello-world"
     assert c.slugify("Café & Château") == "cafe-and-chateau"
     assert c.slugify("  spaces  here  ") == "spaces-here"
+
+def test_count_vowels():
+    assert c.count_vowels("Hello World") == 3
+    assert c.count_vowels("Python Programming") == 4
+    assert c.count_vowels("BCDFG") == 0
+    assert c.count_vowels("AEIOUaeiou") == 10
