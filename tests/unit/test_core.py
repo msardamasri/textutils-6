@@ -11,3 +11,7 @@ def test_top_n_order_and_ties():
 def test_normalize_whitespace_removes_extra_spaces():
     text = "  a   b \n  c  "
     assert c.normalize_whitespace(text) == "a b c"
+
+def test_remove_punctuation_removes_all_punctuation():
+    text = "Hello, world! This is a test."
+    assert c.remove_punctuation(text) == "Hello world This is a test"
