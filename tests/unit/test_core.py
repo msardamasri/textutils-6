@@ -87,3 +87,10 @@ def test_is_anagram():
     assert c.is_anagram("Hello", "World") == False
     assert c.is_anagram("Dormitory", "Dirty room") == True
     assert c.is_anagram("abc", "abcd") == False
+
+def test_compare_texts():
+    text1 = "hello world python"
+    text2 = "world python programming"
+    assert c.compare_texts(text1, text2) == 0.5
+    assert c.compare_texts("same same", "same same") == 1.0
+    assert c.compare_texts("hello", "world") == 0.0

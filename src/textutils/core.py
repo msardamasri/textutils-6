@@ -82,3 +82,10 @@ def is_anagram(a, b):
     a_clean = ''.join(c for c in a.lower() if c.isalpha())
     b_clean = ''.join(c for c in b.lower() if c.isalpha())
     return sorted(a_clean) == sorted(b_clean)
+
+def compare_texts(text1, text2):
+    words1 = set(text1.lower().split())
+    words2 = set(text2.lower().split())
+    if not words1 and not words2:
+        return 1.0
+    return len(words1 & words2) / len(words1 | words2)
