@@ -25,3 +25,6 @@ def is_palindrome(text):
 
 def reverse_words(text):
     return ' '.join(text.split()[::-1]) if text else ''
+
+def average_word_length(text):
+    words = text.split()
